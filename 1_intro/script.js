@@ -1,5 +1,4 @@
 // Print document title in console
-
 console.log(document.title);
 document.title = "Modifying the DOM";
 

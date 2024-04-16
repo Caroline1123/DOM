@@ -1,9 +1,10 @@
 function randomColor() {
     return Math.floor(Math.random()*256)
 }
+
 // Creates a <section> with a random background-color for each learner in your group. This section should contain a paragraph with the name of the learner. Those sections should be appended in the <article>
 // If the background is dark the text should be white, if the background is light the text should be black
-const group = ["This", "Is", "My", "Group.", "Everyone", "Has", "A name"];
+const group = ["Anakin ", "Luke", "Leila", "Obi-Wan", "Yoda", "Darth Vader", "Chewbacca", "Han Solo"];
 
 // Randomizes group order 
 for (let i = group.length - 1; i > 0; i--) { 

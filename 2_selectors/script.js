@@ -1,7 +1,6 @@
 function randomColor() {
-    return Math.floor(Math.random()*256)
+    return `rgb(${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)})`
 }
-
 
 const importantElems = document.querySelectorAll('.important');
 for (let elem of importantElems) {
@@ -9,7 +8,6 @@ for (let elem of importantElems) {
 }
 
 // Select all the img tags and loop through them. If they have no important class, turn their display property to none
-
 const images = document.querySelectorAll("img");
 for (img of images) {
     if (img.classList.contains("important")) {
@@ -27,10 +25,6 @@ for (let paragraph of paragraphs) {
     }
     else {
         console.log(paragraph.innerText);
-        let R = randomColor();
-        let G = randomColor();
-        let B = randomColor();
-        paragraph.style.color = `rgb(${R}, ${G}, ${B})`;
-
+        paragraph.style.color = randomColor()
     }
 }
