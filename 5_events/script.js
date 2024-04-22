@@ -4,7 +4,7 @@ const getElapsedTime = () => {
     return Number((Date.now() - _initTime) / 1000).toFixed(2) + 's'
 }
 
-// Create a new square with event listener
+// Creates a new square with event listener
 const createSquare = (newClass) => {
     const destination = document.querySelector(".displayedsquare-wrapper")
     const newSquare = document.createElement("div");
@@ -15,6 +15,7 @@ const createSquare = (newClass) => {
     destination.appendChild(newSquare);
 }
 
+// Deletes the generated squares
 const deleteSquares = ()  => {
     const newSquares = document.querySelectorAll(".displayedsquare");
     for (square of newSquares) {
@@ -22,7 +23,7 @@ const deleteSquares = ()  => {
     }
 }
 
-// Adds log each time an action is performed
+// Modifies log each time an action is performed
 const editLog = (target) => {
     const ul = document.querySelector("ul");
     const li = document.createElement("li");
@@ -33,7 +34,7 @@ const editLog = (target) => {
         while (ul.firstChild) {
             ul.firstChild.remove();
         }
-        return 0;
+        return;
     }
     else {
         li.innerText = `[${getElapsedTime()}] Created a new ${target.classList[1]} square.`
@@ -51,7 +52,7 @@ const body = document.querySelector("body");
 body.addEventListener("keypress", (event) => {
     // change body background color if spacebar pressed
     if (event.key === " ") {
-        let randomColor = `rgb(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}`
+        let randomColor = `rgba(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)},0.5`
         body.style.backgroundColor = randomColor;
         editLog("spacebar");
     }
